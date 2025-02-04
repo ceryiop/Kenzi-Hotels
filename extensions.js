@@ -589,7 +589,7 @@ export const FeedbackExtension = {
           text-align: center; /* Center align text */
         }
         .star-rating {
-          font-size: 24px; /* Increased star size */
+          font-size: 30px; /* Increased star size */
           color: #e0e0e0;
           margin-bottom: 12px;
           justify-content: center; /* Center align stars */
@@ -618,7 +618,7 @@ export const FeedbackExtension = {
           border-color: #6B4EFF; /* Change border color on hover */
         }
         .submit-btn {
-          background-color: linear-gradient(135deg, #6B4EFF, #8A2BE2);
+          background-color: linear-gradient(135deg,rgb(241, 150, 14),rgb(218, 164, 49));
           color: white;
           padding: 8px 16px;
           border: none;
