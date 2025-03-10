@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -17,7 +17,7 @@
     }
     #confetti-canvas {
       position: fixed;
-      z-index: 9999; /* Increased z-index */
+      z-index: 999;
       top: 0;
       left: 0;
       width: 100vw;
@@ -30,8 +30,11 @@
   <canvas id="confetti-canvas"></canvas>
   <div id="flat-chat"></div>
   <div id="voiceflow-chat-frame"></div>
-
-  <!-- Voiceflow Chat Widget -->
+  
+  <!-- Confetti Script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  
+  <!-- Extensions and Voiceflow Chat Widget -->
   <script type="module">
     import {
       DisableInputExtension,
@@ -42,7 +45,7 @@
       FileUploadExtension,
       KBUploadExtension,
       DateExtension,
-      ConfettiExtension, // Updated extension
+      ConfettiExtension,
       MatrixEffectExtension,
       MultiSelectExtension,
       DateTimeExtension,
@@ -60,9 +63,6 @@
           verify: { projectID: '67ce6ffa307e530c493a66e9' },
           url: 'https://general-runtime.voiceflow.com',
           versionID: 'production',
-          assistant: {
-            stylesheet: "chatagentstyle.css",
-          },
           user: {
             name: 'Demo User',
           },
@@ -81,7 +81,7 @@
               FileUploadExtension,
               KBUploadExtension,
               DateExtension,
-              ConfettiExtension, // Fixed confetti
+              ConfettiExtension,
               MatrixEffectExtension,
               MultiSelectExtension,
               DateTimeExtension,
@@ -90,23 +90,13 @@
               ContactFormExtension,
               DateTimeGuestExtension
             ],
-          }
-        }).then(() => {
-          window.voiceflow.chat.proactive.push({ 
-            type: 'text', 
-            payload: { 
-              message: 'Welcome to Kenzi Hotels! How can I help?' 
-            } 
-          });
+          },
         });
       };
-      v.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs'; // Updated source
+      v.src = 'https://cdn.voiceflow.com/widget/bundle.mjs';
       v.type = 'text/javascript';
       s.parentNode.insertBefore(v, s);
     })(document, 'script');
   </script>
-
-  <!-- Confetti Script MUST COME AFTER VOICEFRAME CONTAINER -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </body>
 </html>
